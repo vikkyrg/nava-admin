@@ -69,9 +69,14 @@ const AdminLayout = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold" style={{ backgroundColor: '#4F46E5', color: 'white' }}>
-              A
-            </div>
+            <button 
+              onClick={handleLogout}
+              className="btn btn-danger"
+              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+            >
+              <LogOut size={18} />
+              <span>Logout</span>
+            </button>
           </div>
         </header>
         
