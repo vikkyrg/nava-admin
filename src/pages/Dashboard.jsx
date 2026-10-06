@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Users, MessageSquare, Briefcase, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [stats, setStats] = useState({
     enquiries: 0,
     jobOpenings: 0,
@@ -38,7 +40,10 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Card 1: Enquiries */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+        <div 
+          onClick={() => navigate('/enquiries')}
+          className="relative overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+        >
           <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-white opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-[60px] fill-white opacity-20 transform translate-y-2">
@@ -55,7 +60,10 @@ const Dashboard = () => {
         </div>
         
         {/* Card 2: Job Openings */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+        <div 
+          onClick={() => navigate('/careers')}
+          className="relative overflow-hidden bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+        >
           <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-white opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-[60px] fill-white opacity-20 transform translate-y-2">
@@ -72,7 +80,10 @@ const Dashboard = () => {
         </div>
 
         {/* Card 3: Applications */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+        <div 
+          onClick={() => navigate('/applications')}
+          className="relative overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+        >
           <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-white opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-[60px] fill-white opacity-20 transform translate-y-2">
